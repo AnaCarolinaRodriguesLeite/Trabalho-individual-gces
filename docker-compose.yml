@@ -1,0 +1,42 @@
+# version: '3.8'
+# services:
+#   src:
+#     build: .
+#     volumes:
+#        - .:/src
+#     command: python3 main.py
+
+#   mongodb:
+#     image : mongo
+#     ports:
+#       - "27017:27017"
+#     # container_name: mongod
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=lappis
+#       - MONGO_INITDB_ROOT_PASSWORD=lappis
+#     volumes:
+#       - mongodb:/data/db
+# volumes:
+#   mongodb:
+
+
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: python3 main.py
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=lappis
+      - MONGO_INITDB_ROOT_PASSWORD=lappis
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+volumes:
+  mongodb:
