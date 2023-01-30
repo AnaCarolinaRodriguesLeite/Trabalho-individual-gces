@@ -1,0 +1,4 @@
+PROJECT_NAME = "ana-carolina-trabalho-individual-2022-2"
+INPUT = "src"
+OUTPUT_DIRECTORY = "doc_doxygen"
+GENERATE_XML = YES
