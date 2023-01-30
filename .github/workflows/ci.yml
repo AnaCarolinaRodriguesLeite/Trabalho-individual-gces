@@ -23,13 +23,10 @@ jobs:
     - name: Instalando Sphinx
       run: sudo apt install python3-sphinx -y
 
-    - name: Update version pyproject
-      run: |
-        pip install requests
-        python update_version.py
     - name: Instalando dependencias
       run: |
         poetry install
+        
     - name: Instalando o lint
       run: |
         pip install pylint
