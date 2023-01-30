@@ -27,11 +27,9 @@ jobs:
       run: |
         pip install requests
         python update_version.py
-
     - name: Instalando dependencias
       run: |
         poetry install
-
     - name: Instalando o lint
       run: |
         pip install pylint
